@@ -201,4 +201,12 @@ final class MainController extends AbstractController
             'articles' => $articles,
         ]);
     }
+
+    #[Route('/show/{id}', name: 'app_main_show')]
+    public function show(int $id): Response
+    {
+        return $this->render('main/show.html.twig',[
+            'id' => $id
+        ]);
+    }
 }

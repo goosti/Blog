@@ -7,6 +7,7 @@ Accueil - {{parent ()}}
 {% block body %}
 <h1>Bienvenue sur DevBlog !</h1>
 
+<div class="wrapper d-flex gap-3 flex-wrap justify-content-center">
 {% for article in articles %}
     <div class="card" style="width: 18rem;">
         <img src={{article.image}} class="card-img-top" alt="...">
@@ -19,6 +20,7 @@ Accueil - {{parent ()}}
         </div>
     </div>
 {% endfor %}
+</div>
 
 
 {% endblock %}
