@@ -1,0 +1,12 @@
+<div class="wrapper d-flex gap-3 flex-wrap justify-content-center">
+{% for article in articles %}
+    <div class="card" style="width: 18rem;">
+        <img src={{article.image}} class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">{{article.titre}}</h5>
+            <p class="card-text">{{article.description_courte}}</p>
+            <a href="{{path('app_main_show', {'id': article.id})}}" class="btn btn-primary">Lire la suite</a>
+        </div>
+    </div>
+{% endfor %}
+</div>

@@ -7,20 +7,7 @@ Accueil - {{parent ()}}
 {% block body %}
 <h1>Bienvenue sur DevBlog !</h1>
 
-<div class="wrapper d-flex gap-3 flex-wrap justify-content-center">
-{% for article in articles %}
-    <div class="card" style="width: 18rem;">
-        <img src={{article.image}} class="card-img-top" alt="...">
-            <div class="card-body">
-            <h5 class="card-title">{{article.titre}}</h5>
-            <p class="card-text">{{article.description_courte}}</p>
-            <p class="card-text">{{article.contenu}}</p>
-            <p class="card-text">{{article.auteur}}</p>
-            <a href="#" class="btn btn-primary">{{article.date}}</a>
-        </div>
-    </div>
-{% endfor %}
-</div>
+{% include 'partials/_card.html.twig' with {'articles': articles} %}
 
 
 {% endblock %}

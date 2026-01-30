@@ -8,4 +8,14 @@ Detail - {{ parent() }}
 
 <h1>Détail de l'article</h1>
 
+<div class="card text-bg-dark text-center">
+    <img src="{{articles[id].image}}" class="card-img" alt="{{articles[id].titre}}">
+    <div class="card-img-overlay">
+        <h5 class="card-title">{{articles[id].titre}}</h5>
+        <p class="card-text">{{articles[id].contenu}}</p>
+        <p class="card-text"><small>Auteur : {{articles[id].auteur}}</small></p>
+        <p class="card-text"><small>Publié le : {{articles[id].date}}</small></p>
+    </div>
+</div>
+
 {% endblock %}
