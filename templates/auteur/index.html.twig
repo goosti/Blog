@@ -10,11 +10,23 @@ Detail - {{ parent() }}
 
     <ul>
         {% for auteur in auteurs %}
-            <li>
-                <a href="{{ path('app_auteur_show', {'id': auteur.id}) }}">
-                    {{ auteur.nom }} {{ auteur.prenom }}
+            <div class="col-md-4 mb-3">
+                <a href="{{ path('app_auteur_show', {'id': auteur.id}) }}"
+                class="text-decoration-none text-dark">
+                    
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1 text-uppercase fw-semibold">
+                                {{ auteur.nom }}
+                            </h5>
+                            <p class="card-text text-muted mb-0">
+                                {{ auteur.prenom }}
+                            </p>
+                        </div>
+                    </div>
                 </a>
-            </li>
+            </div>
+
         {% else %}
             <li>Aucun auteur trouvé.</li>
         {% endfor %}
