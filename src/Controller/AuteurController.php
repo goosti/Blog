@@ -16,7 +16,6 @@ final class AuteurController extends AbstractController
         $auteurs = $auteurRepository->findAll();
 
         return $this->render('auteur/index.html.twig', [
-            'controller_name' => 'AuteurController',
             'auteurs' => $auteurs,
         ]);
     }
@@ -29,12 +28,12 @@ final class AuteurController extends AbstractController
 
         $auteur = $auteurRepository->find($id);
 
-        return $this->render('auteur/index.html.twig',[
+        return $this->render('auteur/show.html.twig',[
             'id' => $id,
             'auteur' => $auteur,
         ]);
 
-        if(empty($auteurs[$id])){
+        if(empty($auteur[$id])){
             throw $this->createNotFoundException('Auteur non trouvé');
     }
     }

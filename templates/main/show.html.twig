@@ -14,7 +14,6 @@ Detail - {{ parent() }}
         <h5 class="card-title bg-dark-subtle">{{article.titre}}</h5>
         <p class="card-text bg-dark-subtle">{{article.contenu}}</p>
         <p class="card-text bg-dark-subtle"><small>Publié le : {{article.createAt|date('d/m/Y')}}</small></p>
-        <a href="{{ path('app_auteur_show', {'id': article.auteur.id}) }}" class="btn btn-primary">Voir l'auteur</a>
     </div>
 </div>
 
