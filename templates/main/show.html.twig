@@ -9,12 +9,12 @@ Detail - {{ parent() }}
 <h1>Détail de l'article</h1>
 
 <div class="card text-bg-dark text-center">
-    <img src="{{articles[id].image}}" class="card-img" alt="{{articles[id].titre}}">
+    <img src="{{article.image}}" class="card-img" alt="{{article.titre}}">
     <div class="card-img-overlay">
-        <h5 class="card-title bg-dark-subtle">{{articles[id].titre}}</h5>
-        <p class="card-text bg-dark-subtle">{{articles[id].contenu}}</p>
-        <p class="card-text bg-dark-subtle"><small>Auteur : {{articles[id].auteur|upper}}</small></p>
-        <p class="card-text bg-dark-subtle"><small>Publié le : {{articles[id].date}}</small></p>
+        <h5 class="card-title bg-dark-subtle">{{article.titre}}</h5>
+        <p class="card-text bg-dark-subtle">{{article.contenu}}</p>
+        <p class="card-text bg-dark-subtle"><small>Publié le : {{article.createAt|date('d/m/Y')}}</small></p>
+        <a href="{{ path('app_auteur_show', {'id': article.auteur.id}) }}" class="btn btn-primary">Voir l'auteur</a>
     </div>
 </div>
 

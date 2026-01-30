@@ -27,21 +27,21 @@ final class MainController extends AbstractController
     // requirements: ['slug' => '[a-z0-9\-]+']
 
     #[Route('/show/{id}', name: 'app_main_show', requirements: ['id' =>'\d+'], methods: ['GET'])]
-    public function show(int $id): Response
+    public function show(int $id, ArticleRepository $articleRepository): Response
     {
 
-        // Si l'id n'est pas entre 1 et 20, on redirige vers la page d'accueil
-        if($id <1 || $id > 20){
-            // throw $this->createNotFoundException('Article non trouvé');
-            throw $this->redirect('app_main');
-        }
+
+        // Récupérer l'article en fonction de son id
+        // find($id) permet de récupérer un seul article via son id
+        $article = $articleRepository->find($id);
+
 
 
         
 
         return $this->render('main/show.html.twig',[
-            'articles' => $articles,
-            'id' => $id
+            'id' => $id,
+            'article' => $article,
         ]);
 
         if(empty($articles[$id])){
