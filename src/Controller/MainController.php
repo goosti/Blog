@@ -20,7 +20,7 @@ final class MainController extends AbstractController
             'contenu' => 'Symfony est un framework PHP puissant et flexible...',
             'auteur' => 'Admin',
             'date' => '2025-01-01',
-            'image' => 'https://placehold.co/600x400/png'
+            'image' => 'https://picsum.photos/1920/1080?random'
         ],
         [
             'id' => 2,
@@ -29,7 +29,7 @@ final class MainController extends AbstractController
             'contenu' => 'PHP est un langage de script côté serveur...',
             'auteur' => 'Jean Dupont',
             'date' => '2025-01-02',
-            'image' => 'https://placehold.co/600x400/png'
+            'image' => 'https://picsum.photos/1920/1080?random'
         ],
         [
             'id' => 3,
@@ -38,7 +38,7 @@ final class MainController extends AbstractController
             'contenu' => 'Le modèle MVC sépare la logique métier...',
             'auteur' => 'Marie Claire',
             'date' => '2025-01-03',
-            'image' => 'https://placehold.co/600x400/png'
+            'image' => 'https://picsum.photos/1920/1080?random'
         ],
         [
             'id' => 4,
@@ -47,7 +47,7 @@ final class MainController extends AbstractController
             'contenu' => 'Pour installer Symfony, vous devez avoir PHP...',
             'auteur' => 'Admin',
             'date' => '2025-01-04',
-            'image' => 'https://placehold.co/600x400/png'
+            'image' => 'https://picsum.photos/1920/1080?random'
         ],
         [
             'id' => 5,
@@ -56,7 +56,7 @@ final class MainController extends AbstractController
             'contenu' => 'Twig est utilisé pour séparer le HTML du PHP...',
             'auteur' => 'Alice',
             'date' => '2025-01-05',
-            'image' => 'https://placehold.co/600x400/png'
+            'image' => 'https://picsum.photos/1920/1080?random'
         ],
         [
             'id' => 6,
@@ -65,7 +65,7 @@ final class MainController extends AbstractController
             'contenu' => 'Les routes permettent de lier une URL à un contrôleur...',
             'auteur' => 'Bob',
             'date' => '2025-01-06',
-            'image' => 'https://placehold.co/600x400/png'
+            'image' => 'https://picsum.photos/1920/1080?random'
         ],
         [
             'id' => 7,
@@ -74,7 +74,7 @@ final class MainController extends AbstractController
             'contenu' => 'Un contrôleur gère la logique de votre application...',
             'auteur' => 'Admin',
             'date' => '2025-01-07',
-            'image' => 'https://placehold.co/600x400/png'
+            'image' => 'https://picsum.photos/1920/1080?random'
         ],
         [
             'id' => 8,
@@ -83,7 +83,7 @@ final class MainController extends AbstractController
             'contenu' => 'Doctrine est un ORM utilisé par Symfony...',
             'auteur' => 'Claire',
             'date' => '2025-01-08',
-            'image' => 'https://placehold.co/600x400/png'
+            'image' => 'https://picsum.photos/1920/1080?random'
         ],
         [
             'id' => 9,
@@ -92,7 +92,7 @@ final class MainController extends AbstractController
             'contenu' => 'Symfony facilite la gestion des formulaires...',
             'auteur' => 'Admin',
             'date' => '2025-01-09',
-            'image' => 'https://placehold.co/600x400/png'
+            'image' => 'https://picsum.photos/1920/1080?random'
         ],
         [
             'id' => 10,
@@ -101,7 +101,7 @@ final class MainController extends AbstractController
             'contenu' => 'La sécurité est un point clé dans Symfony...',
             'auteur' => 'David',
             'date' => '2025-01-10',
-            'image' => 'https://placehold.co/600x400/png'
+            'image' => 'https://picsum.photos/1920/1080?random'
         ],
         [
             'id' => 11,
@@ -110,7 +110,7 @@ final class MainController extends AbstractController
             'contenu' => 'Les services sont au cœur de Symfony...',
             'auteur' => 'Admin',
             'date' => '2025-01-11',
-            'image' => 'https://placehold.co/600x400/png'
+            'image' => 'https://picsum.photos/1920/1080?random'
         ],
         [
             'id' => 12,
@@ -119,7 +119,7 @@ final class MainController extends AbstractController
             'contenu' => 'Les événements permettent de modifier le comportement...',
             'auteur' => 'Emma',
             'date' => '2025-01-12',
-            'image' => 'https://placehold.co/600x400/png'
+            'image' => 'https://picsum.photos/1920/1080?random'
         ],
         [
             'id' => 13,
@@ -128,7 +128,7 @@ final class MainController extends AbstractController
             'contenu' => 'Symfony permet de créer des API performantes...',
             'auteur' => 'Admin',
             'date' => '2025-01-13',
-            'image' => 'https://placehold.co/600x400/png'
+            'image' => 'https://picsum.photos/1920/1080?random'
         ],
         [
             'id' => 14,
@@ -137,7 +137,7 @@ final class MainController extends AbstractController
             'contenu' => 'Les tests sont essentiels pour un code fiable...',
             'auteur' => 'Lucas',
             'date' => '2025-01-14',
-            'image' => 'https://placehold.co/600x400/png'
+            'image' => 'https://picsum.photos/1920/1080?random'
         ],
         [
             'id' => 15,
@@ -146,7 +146,7 @@ final class MainController extends AbstractController
             'contenu' => 'Il existe plusieurs techniques pour optimiser...',
             'auteur' => 'Admin',
             'date' => '2025-01-15',
-            'image' => 'https://placehold.co/600x400/png'
+            'image' => 'https://picsum.photos/1920/1080?random'
         ],
         [
             'id' => 16,
@@ -155,7 +155,7 @@ final class MainController extends AbstractController
             'contenu' => 'Symfony fournit un système avancé de gestion des erreurs...',
             'auteur' => 'Nina',
             'date' => '2025-01-16',
-            'image' => 'https://placehold.co/600x400/png'
+            'image' => 'https://picsum.photos/1920/1080?random'
         ],
         [
             'id' => 17,
@@ -164,7 +164,7 @@ final class MainController extends AbstractController
             'contenu' => 'Les bundles permettent de structurer votre projet...',
             'auteur' => 'Admin',
             'date' => '2025-01-17',
-            'image' => 'https://placehold.co/600x400/png'
+            'image' => 'https://picsum.photos/1920/1080?random'
         ],
         [
             'id' => 18,
@@ -173,7 +173,7 @@ final class MainController extends AbstractController
             'contenu' => 'Le déploiement est une étape cruciale...',
             'auteur' => 'Olivier',
             'date' => '2025-01-18',
-            'image' => 'https://placehold.co/600x400/png'
+            'image' => 'https://picsum.photos/1920/1080?random'
         ],
         [
             'id' => 19,
@@ -182,7 +182,7 @@ final class MainController extends AbstractController
             'contenu' => 'Respecter les bonnes pratiques améliore la maintenance...',
             'auteur' => 'Admin',
             'date' => '2025-01-19',
-            'image' => 'https://placehold.co/600x400/png'
+            'image' => 'https://picsum.photos/1920/1080?random'
         ],
         [
             'id' => 20,
@@ -191,7 +191,7 @@ final class MainController extends AbstractController
             'contenu' => 'Symfony est un excellent choix pour les projets PHP...',
             'auteur' => 'Admin',
             'date' => '2025-01-20',
-            'image' => 'https://placehold.co/600x400/png'
+            'image' => 'https://picsum.photos/1920/1080?random'
         ],
     ];
 
@@ -223,7 +223,7 @@ final class MainController extends AbstractController
             'contenu' => 'Symfony est un framework PHP puissant et flexible...',
             'auteur' => 'Admin',
             'date' => '2025-01-01',
-            'image' => 'https://placehold.co/600x400/png'
+            'image' => 'https://picsum.photos/1920/1080?random'
         ],
         [
             'id' => 2,
@@ -232,7 +232,7 @@ final class MainController extends AbstractController
             'contenu' => 'PHP est un langage de script côté serveur...',
             'auteur' => 'Jean Dupont',
             'date' => '2025-01-02',
-            'image' => 'https://placehold.co/600x400/png'
+            'image' => 'https://picsum.photos/1920/1080?random'
         ],
         [
             'id' => 3,
@@ -241,7 +241,7 @@ final class MainController extends AbstractController
             'contenu' => 'Le modèle MVC sépare la logique métier...',
             'auteur' => 'Marie Claire',
             'date' => '2025-01-03',
-            'image' => 'https://placehold.co/600x400/png'
+            'image' => 'https://picsum.photos/1920/1080?random'
         ],
         [
             'id' => 4,
@@ -250,7 +250,7 @@ final class MainController extends AbstractController
             'contenu' => 'Pour installer Symfony, vous devez avoir PHP...',
             'auteur' => 'Admin',
             'date' => '2025-01-04',
-            'image' => 'https://placehold.co/600x400/png'
+            'image' => 'https://picsum.photos/1920/1080?random'
         ],
         [
             'id' => 5,
@@ -259,7 +259,7 @@ final class MainController extends AbstractController
             'contenu' => 'Twig est utilisé pour séparer le HTML du PHP...',
             'auteur' => 'Alice',
             'date' => '2025-01-05',
-            'image' => 'https://placehold.co/600x400/png'
+            'image' => 'https://picsum.photos/1920/1080?random'
         ],
         [
             'id' => 6,
@@ -268,7 +268,7 @@ final class MainController extends AbstractController
             'contenu' => 'Les routes permettent de lier une URL à un contrôleur...',
             'auteur' => 'Bob',
             'date' => '2025-01-06',
-            'image' => 'https://placehold.co/600x400/png'
+            'image' => 'https://picsum.photos/1920/1080?random'
         ],
         [
             'id' => 7,
@@ -277,7 +277,7 @@ final class MainController extends AbstractController
             'contenu' => 'Un contrôleur gère la logique de votre application...',
             'auteur' => 'Admin',
             'date' => '2025-01-07',
-            'image' => 'https://placehold.co/600x400/png'
+            'image' => 'https://picsum.photos/1920/1080?random'
         ],
         [
             'id' => 8,
@@ -286,7 +286,7 @@ final class MainController extends AbstractController
             'contenu' => 'Doctrine est un ORM utilisé par Symfony...',
             'auteur' => 'Claire',
             'date' => '2025-01-08',
-            'image' => 'https://placehold.co/600x400/png'
+            'image' => 'https://picsum.photos/1920/1080?random'
         ],
         [
             'id' => 9,
@@ -295,7 +295,7 @@ final class MainController extends AbstractController
             'contenu' => 'Symfony facilite la gestion des formulaires...',
             'auteur' => 'Admin',
             'date' => '2025-01-09',
-            'image' => 'https://placehold.co/600x400/png'
+            'image' => 'https://picsum.photos/1920/1080?random'
         ],
         [
             'id' => 10,
@@ -304,7 +304,7 @@ final class MainController extends AbstractController
             'contenu' => 'La sécurité est un point clé dans Symfony...',
             'auteur' => 'David',
             'date' => '2025-01-10',
-            'image' => 'https://placehold.co/600x400/png'
+            'image' => 'https://picsum.photos/1920/1080?random'
         ],
         [
             'id' => 11,
@@ -313,7 +313,7 @@ final class MainController extends AbstractController
             'contenu' => 'Les services sont au cœur de Symfony...',
             'auteur' => 'Admin',
             'date' => '2025-01-11',
-            'image' => 'https://placehold.co/600x400/png'
+            'image' => 'https://picsum.photos/1920/1080?random'
         ],
         [
             'id' => 12,
@@ -322,7 +322,7 @@ final class MainController extends AbstractController
             'contenu' => 'Les événements permettent de modifier le comportement...',
             'auteur' => 'Emma',
             'date' => '2025-01-12',
-            'image' => 'https://placehold.co/600x400/png'
+            'image' => 'https://picsum.photos/1920/1080?random'
         ],
         [
             'id' => 13,
@@ -331,7 +331,7 @@ final class MainController extends AbstractController
             'contenu' => 'Symfony permet de créer des API performantes...',
             'auteur' => 'Admin',
             'date' => '2025-01-13',
-            'image' => 'https://placehold.co/600x400/png'
+            'image' => 'https://picsum.photos/1920/1080?random'
         ],
         [
             'id' => 14,
@@ -340,7 +340,7 @@ final class MainController extends AbstractController
             'contenu' => 'Les tests sont essentiels pour un code fiable...',
             'auteur' => 'Lucas',
             'date' => '2025-01-14',
-            'image' => 'https://placehold.co/600x400/png'
+            'image' => 'https://picsum.photos/1920/1080?random'
         ],
         [
             'id' => 15,
@@ -349,7 +349,7 @@ final class MainController extends AbstractController
             'contenu' => 'Il existe plusieurs techniques pour optimiser...',
             'auteur' => 'Admin',
             'date' => '2025-01-15',
-            'image' => 'https://placehold.co/600x400/png'
+            'image' => 'https://picsum.photos/1920/1080?random'
         ],
         [
             'id' => 16,
@@ -358,7 +358,7 @@ final class MainController extends AbstractController
             'contenu' => 'Symfony fournit un système avancé de gestion des erreurs...',
             'auteur' => 'Nina',
             'date' => '2025-01-16',
-            'image' => 'https://placehold.co/600x400/png'
+            'image' => 'https://picsum.photos/1920/1080?random'
         ],
         [
             'id' => 17,
@@ -367,7 +367,7 @@ final class MainController extends AbstractController
             'contenu' => 'Les bundles permettent de structurer votre projet...',
             'auteur' => 'Admin',
             'date' => '2025-01-17',
-            'image' => 'https://placehold.co/600x400/png'
+            'image' => 'https://picsum.photos/1920/1080?random'
         ],
         [
             'id' => 18,
@@ -376,7 +376,7 @@ final class MainController extends AbstractController
             'contenu' => 'Le déploiement est une étape cruciale...',
             'auteur' => 'Olivier',
             'date' => '2025-01-18',
-            'image' => 'https://placehold.co/600x400/png'
+            'image' => 'https://picsum.photos/1920/1080?random'
         ],
         [
             'id' => 19,
@@ -385,7 +385,7 @@ final class MainController extends AbstractController
             'contenu' => 'Respecter les bonnes pratiques améliore la maintenance...',
             'auteur' => 'Admin',
             'date' => '2025-01-19',
-            'image' => 'https://placehold.co/600x400/png'
+            'image' => 'https://picsum.photos/1920/1080?random'
         ],
         [
             'id' => 20,
@@ -394,7 +394,7 @@ final class MainController extends AbstractController
             'contenu' => 'Symfony est un excellent choix pour les projets PHP...',
             'auteur' => 'Admin',
             'date' => '2025-01-20',
-            'image' => 'https://placehold.co/600x400/png'
+            'image' => 'https://picsum.photos/1920/1080?random'
         ],
     ];
 
