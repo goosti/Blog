@@ -402,5 +402,9 @@ final class MainController extends AbstractController
             'articles' => $articles,
             'id' => $id
         ]);
+
+        if(empty($articles[$id])){
+            throw $this->createNotFoundException('Article non trouvé');
     }
+}
 }
