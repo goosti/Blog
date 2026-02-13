@@ -14,8 +14,13 @@ Detail - {{ parent() }}
         </div>
         <div class="col-md-8">
             <div class="card-body">
-                <h5 class="card-title">{{ product.titre }}</h5>
-                <p class="card-text">{{ product.description }}</p>
+                <h5 class="card-title">Titre : {{ product.titre }}</h5>
+                <p class="card-text">Description : {{ product.description }}</p>
+                <p class="card-text">{{ product.prix }}€</p>
+                <p class="card-text">Stock : {{ product.stock }}</p>
+
+                <button class="btn btn-primary">Modifier</button>
+                <button class="btn btn-primary">Supprimer</button>
             </div>
         </div>
     </div>
