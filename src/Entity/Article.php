@@ -1,5 +1,25 @@
 <?php
 
+/* 
+Créer une entité Product avec les champs :
+
+- titre
+- description
+- prix 
+- stock
+- status
+- imageName
+- slug
+- acceptConditions (bool default false)
+- createdAt
+- updateAt NULLABLE
+
+
+Créer une entité Brand avec les champs
+- brandName str
+- description text
+*/
+
 namespace App\Entity;
 
 use App\Repository\ArticleRepository;
