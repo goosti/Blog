@@ -8,6 +8,7 @@ use DateTimeImmutable;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\String\Slugger\AsciiSlugger;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\HasLifecycleCallbacks]
 
@@ -20,18 +21,39 @@ class Product
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank]
+    #[Assert\Length(
+        min: 3,
+        max: 255,
+        minMessage: 'Le titre doit comporter au moins {{ limit }} caractères.',
+        maxMessage: 'Le titre ne peut pas dépassé {{ limit }} caractères.'
+    )]
     private ?string $titre = null;
 
     #[ORM\Column(type: Types::TEXT)]
+    #[Assert\NotBlank]
+    #[Assert\Length(
+        min: 10,
+        minMessage: 'Le titre doit comporter au moins {{ limit }} caractères.'
+    )]
     private ?string $description = null;
 
     #[ORM\Column]
+    #[Assert\NotBlank]
+    #[Assert\Positive(
+        message: 'Le prix doit être un nombre positif.'
+    )]
     private ?float $prix = null;
 
     #[ORM\Column]
+    #[Assert\NotBlank]
+    #[Assert\Positive(
+        message: 'Le stock doit être un nombre positif.'
+    )]
     private ?int $stock = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank]
     private ?string $status = null;
 
     #[ORM\Column(length: 255)]
@@ -41,6 +63,9 @@ class Product
     private ?string $slug = null;
 
     #[ORM\Column]
+    #[Assert\NotNull(
+        message: 'Vous devez accepter les termes.'
+    )]
     private ?bool $acceptConditions = null;
 
     #[ORM\Column]
@@ -51,15 +76,17 @@ class Product
 
     #[ORM\PrePersist]
     public function onPrePersist(): void {
-        $this->setSlug('slug-du-produit');
         $this->setImageName('https://picsum.photos/seed/7/680/480');
         $this->setCreateAt(new DateTimeImmutable());
+
+        if($this->titre && !$this->slug){
+            $this->generateSlug();
+        }
     }
 
     #[ORM\PreUpdate]
     public function onPreUpdate(): void {
         $this->updateAt = new DateTime();
-        $this->setSlug('slug-du-produit');
     }
 
     private function generateSlug(): void {

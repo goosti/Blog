@@ -10,6 +10,7 @@
             <li class="card text-bg-dark text-center" style="width: 30%; margin-bottom: 20px;">
                 <div class="card-body" style="display: flex; justify-content: space-between;">
                     <img src="{{product.imageName}}" alt="{{product.titre}}" width="100">
+                    <p>{{product.prix}}€</p>
                     <a href="{{ path('app_product_show', {'id': product.id}) }}" class="btn btn-primary">{{ product.titre }}</a>
                 </div>
             </li>
