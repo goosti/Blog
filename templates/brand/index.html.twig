@@ -7,8 +7,8 @@
 
     <ul>
         {% for brand in brands %}
-            <li>
-                <a href="{{ path('app_brand_show', {'id': brand.id}) }}">{{ brand.brandName }}</a>
+            <li class="card text-bg-dark text-center" style="width: 30%; margin-bottom: 20px;">
+                    <a href="{{ path('app_brand_show', {'id': brand.id}) }}" class="card-body text-decoration-none text-white">{{ brand.brandName }}</a>
             </li>
         {% endfor %}
     </ul>

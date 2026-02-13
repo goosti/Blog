@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Detail - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+<div class="bg-light py-5">
+    <h1>Ajouter une marque</h1>
+    <div class="container px-5 w-50 mx-auto">
+        
+
+        {{form_start(form)}}
+
+        <div class="m-3">
+        {{form_label(form.brandName, 'Titre de la marque', {'label_attr': {'class': 'text-primary fw-bold'}})}}
+        {{form_widget(form.brandName)}}
+        {{form_errors(form.brandName)}}
+
+        <div class="m-3">
+        {{form_label(form.description, 'Titre de la description', {'label_attr': {'class': 'text-primary fw-bold'}})}}
+        {{form_widget(form.description)}}
+        {{form_errors(form.description)}}
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-3">
+            Ajouter
+        </button>
+        {{form_end(form)}}
+
+    </div>
+</div>
+
+{% endblock %}
