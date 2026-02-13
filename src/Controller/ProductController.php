@@ -2,8 +2,13 @@
 
 namespace App\Controller;
 
+use App\Entity\Product;
+use App\Form\ProductType;
 use App\Repository\ProductRepository;
+use DateTimeImmutable;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
@@ -20,6 +25,29 @@ final class ProductController extends AbstractController
         ]);
     }
 
+    #[Route('/product/new', name: 'app_product_new', methods: ['GET', 'POST'])]
+    public function create(Request $request, EntityManagerInterface $em): Response
+    {
+        $product = new Product();
+        $form = $this->createForm(ProductType::class, $product);
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+            $product->setSlug('slug-du-produit');
+            $product->setImageName('https://picsum.photos/seed/1/680/480');
+            $product->setCreateAt(new DateTimeImmutable());
+            $em->persist($product);
+            $em->flush();
+
+            return $this->redirectToRoute('app_product');
+        }
+
+        return $this->render('product/new.html.twig', [
+            'form' => $form,
+        ]);
+    } 
+
     #[Route('/product/{id}', name: 'app_product_show')]
     public function show(int $id, ProductRepository $productRepository): Response
     {
@@ -32,6 +60,6 @@ final class ProductController extends AbstractController
 
         if(empty($products[$id])){
             throw $this->createNotFoundException('Produit non trouvé');
+        }
     }
-}
 }
