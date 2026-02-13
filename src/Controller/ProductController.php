@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Entity\Product;
 use App\Form\ProductType;
 use App\Repository\ProductRepository;
-use DateTimeImmutable;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -34,9 +33,7 @@ final class ProductController extends AbstractController
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
-            $product->setSlug('slug-du-produit');
-            $product->setImageName('https://picsum.photos/seed/1/680/480');
-            $product->setCreateAt(new DateTimeImmutable());
+
             $em->persist($product);
             $em->flush();
 

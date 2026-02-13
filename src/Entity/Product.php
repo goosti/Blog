@@ -3,8 +3,13 @@
 namespace App\Entity;
 
 use App\Repository\ProductRepository;
+use DateTime;
+use DateTimeImmutable;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\String\Slugger\AsciiSlugger;
+
+#[ORM\HasLifecycleCallbacks]
 
 #[ORM\Entity(repositoryClass: ProductRepository::class)]
 class Product
@@ -43,6 +48,24 @@ class Product
 
     #[ORM\Column(nullable: true)]
     private ?\DateTime $updateAt = null;
+
+    #[ORM\PrePersist]
+    public function onPrePersist(): void {
+        $this->setSlug('slug-du-produit');
+        $this->setImageName('https://picsum.photos/seed/7/680/480');
+        $this->setCreateAt(new DateTimeImmutable());
+    }
+
+    #[ORM\PreUpdate]
+    public function onPreUpdate(): void {
+        $this->updateAt = new DateTime();
+        $this->setSlug('slug-du-produit');
+    }
+
+    private function generateSlug(): void {
+        $slugger = new AsciiSlugger();
+        $this->slug = $slugger->slug($this->titre)->lower();
+    }
 
     public function getId(): ?int
     {
