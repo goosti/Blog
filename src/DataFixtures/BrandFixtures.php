@@ -32,15 +32,10 @@ class BrandFixtures extends Fixture
                     ->setDescription($faker->paragraph(4));
 
             $manager->persist($brand);
+
+            $this->addReference('brand_' . $index, $brand);
         }
 
         $manager->flush();
-    }
-
-    public function getDependencies(): array 
-    {
-        return [
-            BrandFixtures::class,
-        ];
     }
 }

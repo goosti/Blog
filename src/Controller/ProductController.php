@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Product;
 use App\Form\ProductType;
+use App\Repository\BrandRepository;
 use App\Repository\ProductRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -15,13 +16,13 @@ use Symfony\Component\Routing\Attribute\Route;
 final class ProductController extends AbstractController
 {
     #[Route('/product', name: 'app_product')]
-    public function index(ProductRepository $productRepository): Response
+    public function index(ProductRepository $productRepository, BrandRepository $brandRepository): Response
     {
         $products = $productRepository->findAll();
 
         return $this->render('product/index.html.twig', [
-            'controller_name' => 'ProductController',
             'products' => $products,
+            'brands' => $brandRepository->findAll(),
         ]);
     }
 

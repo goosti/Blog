@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Brand;
 use App\Form\BrandType;
 use App\Repository\BrandRepository;
+use App\Repository\ProductRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -13,6 +14,20 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class BrandController extends AbstractController
 {
+    #[Route('/brand/{id}/products', name: 'app_brand_show')]
+    public function showBrandProducts(Brand $brand, BrandRepository $brandRepository, ProductRepository $productRepository): Response
+    {
+    // Récupérer les produits de la marque
+
+        $products = $productRepository->findAll();
+
+        return $this->render('brand/show.html.twig', [
+            'brand' => $brand,
+            'brands' => $brandRepository->findAll(),
+        ]);
+    }
+
+
     #[Route('/brand', name: 'app_brand')]
     public function index(BrandRepository $brandRepository): Response
     {

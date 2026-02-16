@@ -2,18 +2,19 @@
 
 namespace App\DataFixtures;
 
+use App\DataFixtures\BrandFixtures;
 use App\Entity\Brand;
 use App\Entity\Product;
 use DateTimeImmutable;
 use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
 
-class ProductFixtures extends Fixture
+class ProductFixtures extends Fixture implements DependentFixtureInterface
 {
 public function load(ObjectManager $manager): void
     {
-        /*   
         $faker = Factory::create();
         for ($i = 0; $i < 100; $i++) {
             $product = new Product();
@@ -26,19 +27,20 @@ public function load(ObjectManager $manager): void
                     ->setStatus($faker->randomElement(['available', 'unavailable','preorder']))
                     ->setStock($faker->numberBetween(0, 100))
                     ->setAcceptConditions($faker->boolean())
-                    ->setCreateAt(new DateTimeImmutable());
-
-                    if($faker->boolean(80)){
-                        $randomBrandIndex = $faker->numberBetween(0,9);
-                        $brandReference = 'brand_' . $randomBrandIndex;
-                        $brand = $this->getReference($brandReference, Brand::class);
-                        $product->setMarque($brand);
-                    }
+                    ->setCreateAt(new DateTimeImmutable())
+                    ->setMarque($this->getReference('brand_'.$faker->randomDigit(0.9), Brand::class));
 
             $manager->persist($product);
         }
 
         $manager->flush();
-        */
+        
+    } 
+
+    public function getDependencies(): array
+    {
+        return [
+            BrandFixtures::class,
+        ];
     } 
 }

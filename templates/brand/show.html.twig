@@ -1,17 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-Detail - {{ parent() }}
+La marque {{ brands.brandName }}
 {% endblock %}
 
 {% block body %}
 
-<h1>Détail des marques</h1>
-<div class="card text-bg-dark text-center">
-    <div class="card-body">
-        <h5 class="card-title">{{ brands.brandName }}</h5>
-        <p class="card-text">{{ brands.description }}</p>
-    </div>
-</div>
+<h1>Liste des produits de la marque {{ brands.brandName }}</h1>
 
 {% endblock %}
