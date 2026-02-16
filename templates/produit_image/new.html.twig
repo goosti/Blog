@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ProduitImage{% endblock %}
+
+{% block body %}
+    <h1>Create new ProduitImage</h1>
+
+    {{ include('produit_image/_form.html.twig') }}
+
+    <a href="{{ path('app_produit_image_index') }}">back to list</a>
+{% endblock %}
