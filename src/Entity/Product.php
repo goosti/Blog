@@ -74,6 +74,10 @@ class Product
     #[ORM\Column(nullable: true)]
     private ?\DateTime $updateAt = null;
 
+    #[ORM\ManyToOne(inversedBy: 'products')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Brand $marque = null;
+
     #[ORM\PrePersist]
     public function onPrePersist(): void {
         $this->setImageName('https://picsum.photos/seed/7/680/480');
@@ -215,6 +219,18 @@ class Product
     public function setUpdateAt(?\DateTime $updateAt): static
     {
         $this->updateAt = $updateAt;
+
+        return $this;
+    }
+
+    public function getMarque(): ?Brand
+    {
+        return $this->marque;
+    }
+
+    public function setMarque(?Brand $marque): static
+    {
+        $this->marque = $marque;
 
         return $this;
     }

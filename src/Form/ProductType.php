@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+use App\Entity\Brand;
 use App\Entity\Product;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
@@ -35,6 +36,7 @@ class ProductType extends AbstractType
             ->add('acceptConditions', CheckboxType::class, [
                 'label'=>'Vous acceptez les termes et conditions',
             ])
+            ->add('marque', Brand::class)
         ;
     }
 
@@ -42,6 +44,9 @@ class ProductType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Product::class,
+            'choice_label' => 'brandName',
+            'label' => 'Marque',
+            'placeholder' => 'Sélectionnez une marque',
         ]);
     }
 }
