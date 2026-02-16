@@ -5,6 +5,8 @@ namespace App\Entity;
 use App\Repository\ProductRepository;
 use DateTime;
 use DateTimeImmutable;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\String\Slugger\AsciiSlugger;
@@ -77,6 +79,24 @@ class Product
     #[ORM\ManyToOne(inversedBy: 'products')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Brand $marque = null;
+
+    /**
+     * @var Collection<int, ProduitImage>
+     */
+    #[ORM\OneToMany(targetEntity: ProduitImage::class, mappedBy: 'produit')]
+    private Collection $produitImages;
+
+    /**
+     * @var Collection<int, Tag>
+     */
+    #[ORM\ManyToMany(targetEntity: Tag::class, mappedBy: 'produits')]
+    private Collection $tags;
+
+    public function __construct()
+    {
+        $this->produitImages = new ArrayCollection();
+        $this->tags = new ArrayCollection();
+    }
 
     #[ORM\PrePersist]
     public function onPrePersist(): void {
@@ -231,6 +251,63 @@ class Product
     public function setMarque(?Brand $marque): static
     {
         $this->marque = $marque;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, ProduitImage>
+     */
+    public function getProduitImages(): Collection
+    {
+        return $this->produitImages;
+    }
+
+    public function addProduitImage(ProduitImage $produitImage): static
+    {
+        if (!$this->produitImages->contains($produitImage)) {
+            $this->produitImages->add($produitImage);
+            $produitImage->setProduit($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProduitImage(ProduitImage $produitImage): static
+    {
+        if ($this->produitImages->removeElement($produitImage)) {
+            // set the owning side to null (unless already changed)
+            if ($produitImage->getProduit() === $this) {
+                $produitImage->setProduit(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Tag>
+     */
+    public function getTags(): Collection
+    {
+        return $this->tags;
+    }
+
+    public function addTag(Tag $tag): static
+    {
+        if (!$this->tags->contains($tag)) {
+            $this->tags->add($tag);
+            $tag->addProduit($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTag(Tag $tag): static
+    {
+        if ($this->tags->removeElement($tag)) {
+            $tag->removeProduit($this);
+        }
 
         return $this;
     }
