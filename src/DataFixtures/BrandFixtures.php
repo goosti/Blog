@@ -12,10 +12,23 @@ class BrandFixtures extends Fixture
     public function load(ObjectManager $manager): void
     {
         $faker = Factory::create('fr_FR');
-        for ($i = 0; $i < 10; $i++) {
+        $brandsTab=[
+            'Mapple',
+            'Samsong',
+            'Suny',
+            'BG',
+            'Bell',
+            'PV',
+            'Lenouvo',
+            'Casus',
+            'Cancer',
+            'Macrosoft'
+        ];
+        
+        foreach ($brandsTab as $index => $brandName) {
             $brand = new Brand();
 
-            $brand->setBrandName($faker->sentence(3))
+            $brand->setBrandName($brandName)
                     ->setDescription($faker->paragraph(4));
 
             $manager->persist($brand);
