@@ -11,8 +11,9 @@ use Faker\Factory;
 
 class ProductFixtures extends Fixture
 {
-    public function load(ObjectManager $manager): void
+public function load(ObjectManager $manager): void
     {
+        /*   
         $faker = Factory::create();
         for ($i = 0; $i < 100; $i++) {
             $product = new Product();
@@ -27,29 +28,17 @@ class ProductFixtures extends Fixture
                     ->setAcceptConditions($faker->boolean())
                     ->setCreateAt(new DateTimeImmutable());
 
+                    if($faker->boolean(80)){
+                        $randomBrandIndex = $faker->numberBetween(0,9);
+                        $brandReference = 'brand_' . $randomBrandIndex;
+                        $brand = $this->getReference($brandReference, Brand::class);
+                        $product->setMarque($brand);
+                    }
+
             $manager->persist($product);
         }
 
         $manager->flush();
-    }
-}
-
-
-
-class BrandFixtures extends Fixture
-{
-    public function load(ObjectManager $manager): void
-    {
-        $faker = Factory::create();
-        for ($i = 0; $i < 10; $i++) {
-            $brand = new Brand();
-
-            $brand->setBrandName($faker->sentence(3))
-                    ->setDescription($faker->paragraph(4));
-
-            $manager->persist($brand);
-        }
-
-        $manager->flush();
-    }
+        */
+    } 
 }
